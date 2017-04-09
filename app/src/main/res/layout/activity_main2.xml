@@ -5,17 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.root.sohaari.Main2Activity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/fr"
+        android:background="@color/colorGreen">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:text="Balance"
+            android:textColor="@color/colorWhite"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/></FrameLayout>
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_above="@+id/navigation"
+        android:layout_below="@+id/fr">
     <GridView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnWidth="200dp"
         android:numColumns="2"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
+        android:verticalSpacing="4dp"
+        android:horizontalSpacing="0dp"
         android:stretchMode="columnWidth"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:id="@+id/gv"></GridView>
+        android:layout_marginTop="0dp"
+        android:id="@+id/gv"></GridView></FrameLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorGreen"
+        app:menu="@menu/bottom_nav_list"/>
 
 
 </RelativeLayout>
