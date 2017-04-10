@@ -14,9 +14,10 @@ import android.widget.ListAdapter;
 
 class ImageAdapter extends BaseAdapter {
     private Context mContext;
-    public Integer[] pics={R.drawable.imgii,R.drawable.imgjj,R.drawable.imgkk,R.drawable.imgnn,R.drawable.imgll,R.drawable.imgmm};
+    public Integer[] pics = {R.drawable.imgii, R.drawable.imgjj, R.drawable.imgkk, R.drawable.imgnn, R.drawable.imgll, R.drawable.imgmm};
+
     public ImageAdapter(Context c) {
-        mContext=c;
+        mContext = c;
     }
 
     @Override
@@ -36,9 +37,9 @@ class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView=new ImageView(mContext);
+        ImageView imageView = new ImageView(mContext);
         imageView.setImageResource(pics[position]);
-        imageView.setLayoutParams(new GridView.LayoutParams(345,265));
+        imageView.setLayoutParams(new GridView.LayoutParams(345, 265));
         return imageView;
     }
 }
