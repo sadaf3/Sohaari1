@@ -5,163 +5,190 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.root.sohaari.SendMoney">
+
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:theme="@style/AppTheme"
         android:id="@+id/sm"
-        android:background="@color/colorPrimary">
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-            android:text="@string/sendmoney"
             android:layout_marginLeft="15dp"
             android:gravity="center"
-            android:textColor="@color/colorWhite"/>
+            android:text="@string/sendmoney"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+            android:textColor="@color/colorWhite" />
     </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sm"></FrameLayout>
+
     <TextView
+        android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:layout_below="@+id/sm"
-        android:id="@+id/tv"
-        android:text="SELECT AN OPTION"/>
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="SELECT AN OPTION"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
     <FrameLayout
+        android:id="@+id/frame1"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_below="@+id/tv"
-        android:id="@+id/frame1"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
         <ImageView
+            android:id="@+id/iv1"
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_marginLeft="10dp"
-            android:id="@+id/iv1"
-            android:src="@drawable/ic_contact_phone_black_24dp"
             android:layout_marginTop="11dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:src="@drawable/ic_contact_phone_black_24px" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="70dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
             android:gravity="center"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-            android:text="Mobile Number" />
+            android:text="Mobile Number"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
     </FrameLayout>
+
     <FrameLayout
+        android:id="@+id/frame2"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_below="@+id/frame1"
-        android:id="@+id/frame2"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_credit_card_black_24dp"
             android:layout_marginTop="11dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:src="@drawable/ic_credit_card_black_24px" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Aadhar Number"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
             android:layout_marginLeft="70dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="Aadhar Number"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
     </FrameLayout>
+
     <FrameLayout
+        android:id="@+id/frame3"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_below="@+id/frame2"
-        android:id="@+id/frame3"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:src="@drawable/ic_home_black_24dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="11dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:src="@drawable/ic_home_black_24px" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Payment Address"
             android:layout_marginLeft="70dp"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="Payment Address"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
     </FrameLayout>
+
     <FrameLayout
+        android:id="@+id/frame4"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_below="@+id/frame3"
-        android:id="@+id/frame4"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:src="@drawable/ic_people_black_24dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="11dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:src="@drawable/ic_people_black_24px" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Saved Beneficiary"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
             android:layout_marginLeft="70dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="Saved Beneficiary"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
     </FrameLayout>
+
     <FrameLayout
+        android:id="@+id/frame5"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_below="@+id/frame4"
-        android:id="@+id/frame5"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:src="@drawable/ic_account_balance_black_24dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="11dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:src="@drawable/ic_account_balance_black_24px" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="IFSC, Account Number"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
             android:layout_marginLeft="70dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="IFSC, Account Number"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
     </FrameLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_below="@+id/frame5"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:layout_marginTop="11dp"
-            android:src="@drawable/ic_phone_iphone_black_24dp"
             android:layout_marginLeft="10dp"
-            android:gravity="center"/>
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:src="@drawable/ic_phone_iphone_black_24px" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="MMID, Mobile Number"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
             android:layout_marginLeft="70dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="MMID, Mobile Number"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
     </FrameLayout>
+
 
 </RelativeLayout>

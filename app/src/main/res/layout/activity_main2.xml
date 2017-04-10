@@ -7,41 +7,46 @@
     tools:context="com.example.root.sohaari.Main2Activity">
 
     <FrameLayout
+        android:id="@+id/fr"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/fr"
-        android:theme="@style/AppTheme"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginLeft="15dp"
+            android:gravity="center"
 
             android:text="@string/home"
-            android:textColor="@color/colorWhite"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/></FrameLayout>
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+            android:textColor="@color/colorWhite" />
+    </FrameLayout>
+
     <FrameLayout
+        android:id="@+id/fr1"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_below="@+id/fr"
-        android:background="@color/colorGreen"
-        android:id="@+id/fr1">
+        android:background="@color/colorGreen">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textAlignment="center"
             android:text="Balance"
-            android:textColor="@color/colorWhite"/>
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorWhite" />
     </FrameLayout>
+
     <FrameLayout
         android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_below="@+id/fr1"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fr1">
 
         <GridView
             android:id="@+id/gv"
@@ -55,15 +60,16 @@
             android:stretchMode="columnWidth"
             android:verticalSpacing="3dp"></GridView>
     </FrameLayout>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@color/colorGreen"
-        app:menu="@menu/bottom_nav_list"
         app:itemIconTint="@color/colorWhite"
-        app:itemTextColor="@color/colorWhite"/>
+        app:itemTextColor="@color/colorWhite"
+        app:menu="@menu/bottom_nav_list" />
 
 
 </RelativeLayout>

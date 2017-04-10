@@ -4,28 +4,28 @@
 
     <item
         android:id="@+id/menu_one"
-        android:icon="@drawable/home"
+        android:icon="@drawable/ic_home_black_24px"
         android:title="@string/menu_home"
         app:showAsAction="ifRoom"
         android:enabled="true"/>
 
     <item
         android:id="@+id/menu_two"
-        android:icon="@drawable/lang"
+        android:icon="@drawable/ic_language_black_24px"
         android:title="@string/menu_lang"
         app:showAsAction="ifRoom"
         android:enabled="true"/>
 
     <item
         android:id="@+id/menu_three"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/ic_account_circle_black_24px"
         android:title="@string/menu_profile"
         app:showAsAction="ifRoom"
         android:enabled="true"/>
 
     <item
         android:id="@+id/menu_four"
-        android:icon="@drawable/help"
+        android:icon="@drawable/ic_help_black_24px"
         android:title="@string/menu_support"
         app:showAsAction="ifRoom"
         android:enabled="true"/>
