@@ -19,6 +19,7 @@ public class Main2Activity extends AppCompatActivity {
         gv1.setAdapter(new ImageAdapter(this));
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         gv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
