@@ -26,6 +26,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/f"
         android:layout_below="@+id/sm"></FrameLayout>
 
     <TextView
@@ -170,6 +171,7 @@
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_below="@+id/frame5"
+        android:id="@+id/frame6"
         android:layout_marginTop="5dp"
         android:background="@color/colorWhite">
 
