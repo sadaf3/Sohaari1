@@ -25,7 +25,8 @@
 
         </activity>
         <activity android:name=".MiniStatement" />
-        <activity android:name=".SendMoney" />
+        <activity android:name=".SendMoney"
+            android:theme="@style/HomeTheme"/>
         <activity android:name=".RequestMoney" />
         <activity android:name=".Transactions" />
         <activity android:name=".UpiPin" />

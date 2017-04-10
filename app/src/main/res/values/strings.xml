@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Sohaari</string>
     <string name="home">Home</string>
+    <string name="sendmoney">Send Money To</string>
     <string name="menu_home">Home</string>
     <string name="menu_lang">Language</string>
     <string name="menu_profile">My Profile</string>
