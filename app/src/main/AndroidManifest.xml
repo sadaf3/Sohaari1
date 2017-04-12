@@ -24,10 +24,10 @@
             android:theme="@style/HomeTheme">
 
         </activity>
-        <activity android:name=".MiniStatement" />
         <activity android:name=".SendMoney"
             android:theme="@style/HomeTheme"/>
-        <activity android:name=".RequestMoney" />
+        <activity android:name=".RequestMoney"
+            android:theme="@style/HomeTheme"/>
         <activity android:name=".Transactions" />
         <activity android:name=".UpiPin" />
         <activity android:name=".PendingRequest"></activity>

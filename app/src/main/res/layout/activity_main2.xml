@@ -9,7 +9,7 @@
     <FrameLayout
         android:id="@+id/fr"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:background="@color/colorPrimary"
         android:theme="@style/AppTheme">
 
@@ -27,14 +27,15 @@
     <FrameLayout
         android:id="@+id/fr1"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="95dp"
         android:layout_below="@+id/fr"
+        android:layout_marginBottom="4dp"
         android:background="@color/colorGreen">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="Balance"
             android:textAlignment="center"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -51,14 +52,14 @@
         <GridView
             android:id="@+id/gv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="0dp"
             android:columnWidth="200dp"
             android:gravity="center"
             android:horizontalSpacing="0dp"
             android:numColumns="2"
             android:stretchMode="columnWidth"
-            android:verticalSpacing="3dp"></GridView>
+            android:verticalSpacing="4dp"></GridView>
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
