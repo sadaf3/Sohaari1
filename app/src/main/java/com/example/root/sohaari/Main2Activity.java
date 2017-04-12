@@ -42,22 +42,16 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    Intent go = new Intent(Main2Activity.this, MiniStatement.class);
-                    startActivity(go);
-                } else if (position == 1) {
                     Intent go = new Intent(Main2Activity.this, SendMoney.class);
                     startActivity(go);
-                } else if (position == 2) {
+                } else if (position == 1) {
                     Intent go = new Intent(Main2Activity.this, RequestMoney.class);
+                    startActivity(go);
+                } else if (position == 2) {
+                    Intent go = new Intent(Main2Activity.this, Transactions.class);
                     startActivity(go);
                 } else if (position == 3) {
                     Intent go = new Intent(Main2Activity.this, PendingRequest.class);
-                    startActivity(go);
-                } else if (position == 4) {
-                    Intent go = new Intent(Main2Activity.this, Transactions.class);
-                    startActivity(go);
-                } else if (position == 5) {
-                    Intent go = new Intent(Main2Activity.this, UpiPin.class);
                     startActivity(go);
                 }
             }

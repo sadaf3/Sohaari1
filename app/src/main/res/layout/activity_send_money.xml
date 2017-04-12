@@ -23,172 +23,180 @@
             android:textColor="@color/colorWhite" />
     </FrameLayout>
 
-    <FrameLayout
+    <RelativeLayout
+        android:id="@+id/f"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/sm"></FrameLayout>
-
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/sm"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="SELECT AN OPTION"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <FrameLayout
-        android:id="@+id/frame1"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_below="@+id/tv"
-        android:layout_marginTop="5dp"
-        android:background="@color/colorWhite">
-
-        <ImageView
-            android:id="@+id/iv1"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="11dp"
-            android:gravity="center"
-            android:src="@drawable/ic_contact_phone_black_24px" />
+        android:baselineAligned="false"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="70dp"
-            android:gravity="center"
-            android:text="Mobile Number"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-    </FrameLayout>
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="SELECT AN OPTION"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <FrameLayout
-        android:id="@+id/frame2"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_below="@+id/frame1"
-        android:layout_marginTop="5dp"
-        android:background="@color/colorWhite">
+        <LinearLayout
+            android:id="@+id/frame1"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_below="@+id/tv"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="11dp"
-            android:gravity="center"
-            android:src="@drawable/ic_credit_card_black_24px" />
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:gravity="center"
+                android:src="@drawable/ic_contact_phone_black_24px" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="70dp"
-            android:gravity="center"
-            android:text="Aadhar Number"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-    </FrameLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="Mobile Number"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+        </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frame3"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_below="@+id/frame2"
-        android:layout_marginTop="5dp"
-        android:background="@color/colorWhite">
+        <LinearLayout
+            android:id="@+id/frame2"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_below="@+id/frame1"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="11dp"
-            android:gravity="center"
-            android:src="@drawable/ic_home_black_24px" />
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:gravity="center"
+                android:src="@drawable/ic_credit_card_black_24px" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="70dp"
-            android:gravity="center"
-            android:text="Payment Address"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-    </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="Aadhar Number"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+        </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frame4"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_below="@+id/frame3"
-        android:layout_marginTop="5dp"
-        android:background="@color/colorWhite">
+        <LinearLayout
+            android:id="@+id/frame3"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_below="@+id/frame2"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="11dp"
-            android:gravity="center"
-            android:src="@drawable/ic_people_black_24px" />
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:gravity="center"
+                android:src="@drawable/ic_home_black_24px" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="70dp"
-            android:gravity="center"
-            android:text="Saved Beneficiary"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-    </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="Payment Address"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+        </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frame5"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_below="@+id/frame4"
-        android:layout_marginTop="5dp"
-        android:background="@color/colorWhite">
+        <LinearLayout
+            android:id="@+id/frame4"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_below="@+id/frame3"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="11dp"
-            android:gravity="center"
-            android:src="@drawable/ic_account_balance_black_24px" />
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:gravity="center"
+                android:src="@drawable/ic_people_black_24px" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="70dp"
-            android:gravity="center"
-            android:text="IFSC, Account Number"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-    </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="Saved Beneficiary"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+        </LinearLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_below="@+id/frame5"
-        android:layout_marginTop="5dp"
-        android:background="@color/colorWhite">
+        <LinearLayout
+            android:id="@+id/frame5"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_below="@+id/frame4"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="11dp"
-            android:gravity="center"
-            android:src="@drawable/ic_phone_iphone_black_24px" />
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:gravity="center"
+                android:src="@drawable/ic_account_balance_black_24px" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="70dp"
-            android:gravity="center"
-            android:text="MMID, Mobile Number"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-    </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="IFSC, Account Number"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/frame6"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_below="@+id/frame5"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:gravity="center"
+                android:src="@drawable/ic_phone_iphone_black_24px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="MMID, Mobile Number"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

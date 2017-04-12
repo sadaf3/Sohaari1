@@ -1,9 +1,7 @@
 package com.example.root.sohaari;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import static com.example.root.sohaari.utils.MakeCall.makeCall;
+import android.os.Bundle;
 
 public class RequestMoney extends AppCompatActivity {
 
