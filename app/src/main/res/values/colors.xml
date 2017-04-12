@@ -6,4 +6,8 @@
     <color name="colorGreen"> #3c8105 </color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorBrandPrimaryAccent">#FF629F1D</color>
+    <color name="horizontal_line_background">#22000000</color>
+    <color name="light_blue">#2196f3</color>
+
 </resources>
