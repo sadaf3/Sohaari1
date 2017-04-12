@@ -13,6 +13,5 @@ public class Transactions extends AppCompatActivity {
         setContentView(R.layout.activity_transactions);
 
         makeCall("*99*6", this, this);
-
     }
 }
