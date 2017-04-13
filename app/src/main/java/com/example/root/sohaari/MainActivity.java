@@ -19,7 +19,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Main2Activity.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }

@@ -54,6 +54,7 @@ public class Main2Activity extends AppCompatActivity {
                     Intent go = new Intent(Main2Activity.this, PendingRequest.class);
                     startActivity(go);
                 }
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
     }
@@ -93,5 +94,11 @@ public class Main2Activity extends AppCompatActivity {
             Log.v(TAG, "***ACCESSIBILITY IS DISABLED***");
         }
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }

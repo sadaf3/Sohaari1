@@ -9,5 +9,5 @@
     <color name="colorBrandPrimaryAccent">#FF629F1D</color>
     <color name="horizontal_line_background">#22000000</color>
     <color name="light_blue">#2196f3</color>
-
+    <color name="toolbar_color">#e0e0e0</color>
 </resources>

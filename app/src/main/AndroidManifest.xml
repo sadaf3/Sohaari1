@@ -20,17 +20,39 @@
         </activity>
         <activity
             android:name=".Main2Activity"
+            android:theme="@style/HomeTheme" />
+        <activity
+            android:name=".SendMoney"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RequestMoney"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Transactions"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UpiPin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PendingRequest"
+            android:theme="@style/AppTheme.NoActionBar" />
 
-            android:theme="@style/HomeTheme">
+        <activity android:name=".activity.AccessibilityNotEnabled" />
 
-        </activity>
-        <activity android:name=".MiniStatement" />
-        <activity android:name=".SendMoney"
-            android:theme="@style/HomeTheme"/>
-        <activity android:name=".RequestMoney" />
-        <activity android:name=".Transactions" />
-        <activity android:name=".UpiPin" />
-        <activity android:name=".PendingRequest"></activity>
+        <service
+            android:name=".service.USSDAccessibilityService"
+            android:enabled="true"
+            android:label="@string/accessibility_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter android:priority="1000">
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <service android:name=".service.BackgroundService" />
     </application>
-
 </manifest>

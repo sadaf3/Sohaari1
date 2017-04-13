@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.root.sohaari.RequestMoney">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_color"
+        android:titleTextColor="@android:color/black" />
 
     <FrameLayout
         android:id="@+id/rm"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@color/colorPrimary"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,7 +34,7 @@
         android:id="@+id/rel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rm"
+        android:layout_below="@+id/toolbar"
         android:baselineAligned="false"
         android:orientation="vertical">
 
