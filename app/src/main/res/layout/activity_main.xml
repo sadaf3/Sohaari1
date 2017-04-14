@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ff502d"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.root.sohaari.MainActivity">
@@ -12,7 +12,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/index" />
+        android:src="@drawable/index"
+        android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -21,7 +22,6 @@
         android:layout_alignParentEnd="true"
         android:backgroundTint="@color/colorWhite"
         android:src="@drawable/logo" />
-
 
     <TextView
         android:id="@+id/textView2"
@@ -42,8 +42,14 @@
         android:layout_above="@+id/textView4"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="96dp"
-        android:background="@color/colorGreen"
-        android:text="Enter" />
+        android:paddingBottom="20dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="20dp"
+        android:stateListAnimator="@null"
+        android:text="Enter"
+        android:textSize="18dp"
+        android:theme="@style/FlatButtonGreen" />
 
     <Button
         android:id="@+id/button2"
@@ -54,9 +60,12 @@
         android:layout_marginBottom="33dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/colorGreen"
-        android:text="Get UPI Pin" />
-
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:stateListAnimator="@null"
+        android:text="Get UPI Pin"
+        android:textSize="18dp"
+        android:theme="@style/FlatButtonGreen" />
 
     <TextView
         android:id="@+id/textView4"
@@ -68,6 +77,4 @@
         android:text="Don't have a UPI Pin?"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorWhite" />
-
-
 </RelativeLayout>
