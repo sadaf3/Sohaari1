@@ -15,7 +15,7 @@ public class RequestMoney extends AppCompatActivity {
     public void setUpToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar == null) return;
-        toolbar.setTitle("Pending Requests");
+        toolbar.setTitle("Request Money");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);

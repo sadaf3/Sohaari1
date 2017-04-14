@@ -12,31 +12,6 @@ public class SendMoney extends AppCompatActivity {
     LinearLayout frame1, frame2, frame3, frame4, frame5, frame6;
 
     @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return false;
-    }
-
-    public void setUpToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        if (toolbar == null) return;
-
-        toolbar.setTitle("Send Money to");
-        //toolbar.setNavigationIcon(R.drawable.ic_close);
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money);
@@ -95,18 +70,45 @@ public class SendMoney extends AppCompatActivity {
     }
 
     public void changeFragment(Fragment fr) {
-        android.support.v4.app.FragmentManager frm = getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction trans = frm.beginTransaction();
-        trans.setCustomAnimations(R.anim.slide_from_right,
-                R.anim.slide_to_left);
-
-        trans.replace(R.id.f, fr);
-        trans.commit();
+        if (findViewById(R.id.fragment_container) != null) {
+            android.support.v4.app.FragmentManager frm = getSupportFragmentManager();
+            android.support.v4.app.FragmentTransaction trans = frm.beginTransaction();
+            trans.setCustomAnimations(R.anim.slide_from_right,
+                    R.anim.slide_to_left);
+            trans.replace(R.id.f, fr);
+            trans.commit();
+        }
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return false;
+    }
+
+    public void setUpToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        if (toolbar == null) return;
+
+        toolbar.setTitle("Send Money to");
+        //toolbar.setNavigationIcon(R.drawable.ic_close);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
     }
 }
