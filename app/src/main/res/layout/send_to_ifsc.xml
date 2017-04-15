@@ -12,7 +12,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:paddingStart="8dp"
-        android:text="MMID, Mobile Number"
+        android:text="IFSC, Account Number"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
 
@@ -41,6 +41,7 @@
             android:background="@drawable/edittext_back">
 
             <EditText
+                android:id="@+id/ifsc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -72,7 +73,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginBottom="4dp"
             android:layout_marginStart="2dp"
-            android:text="MMID" />
+            android:text="Send to" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,6 +82,7 @@
             android:background="@drawable/edittext_back">
 
             <EditText
+                android:id="@+id/account_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -89,7 +91,7 @@
                 android:background="@null"
                 android:drawablePadding="8dp"
                 android:drawableStart="@drawable/ic_account_balance_black_24px"
-                android:hint="Enter receiver's MMID"
+                android:hint="Enter receiver's Account no"
                 android:inputType="number"
                 android:maxLength="10"
                 android:maxLines="1" />
@@ -155,4 +157,5 @@
         android:text="continue"
         android:textSize="16sp"
         android:theme="@style/FlatButton" />
+
 </LinearLayout>

@@ -8,8 +8,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Toast;
 
-import com.example.root.sohaari.MainActivity;
+import com.example.root.sohaari.activity.Main2Activity;
 import com.example.root.sohaari.utils.CheckBackgroundService;
 
 import java.util.ArrayList;
@@ -92,7 +93,8 @@ public class USSDAccessibilityService extends AccessibilityService {
         Log.d(Tag, "USSDAccessibilityService connected");
 
         if (CheckBackgroundService.isAccessibilityEnabled(getApplicationContext())) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Toast.makeText(this, "connected", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, Main2Activity.class);
             //addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

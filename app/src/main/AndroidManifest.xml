@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.root.sohaari">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,22 +23,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Main2Activity"
+            android:name=".activity.Main2Activity"
             android:theme="@style/HomeTheme" />
         <activity
-            android:name=".SendMoney"
+            android:name=".activity.SendMoney"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RequestMoney"
+            android:name=".activity.RequestMoney"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Transactions"
+            android:name=".activity.Transactions"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UpiPin"
+            android:name=".activity.UpiPin"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PendingRequest"
+            android:name=".activity.PendingRequest"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name=".activity.AccessibilityNotEnabled" />

@@ -1,4 +1,4 @@
-package com.example.root.sohaari;
+package com.example.root.sohaari.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
-import com.example.root.sohaari.activity.AccessibilityNotEnabled;
+import com.example.root.sohaari.R;
+import com.example.root.sohaari.service.BackgroundService;
 import com.example.root.sohaari.service.USSDAccessibilityService;
 
 public class Main2Activity extends AppCompatActivity {
@@ -27,11 +29,14 @@ public class Main2Activity extends AppCompatActivity {
 
         PACKAGE_NAME = getApplicationContext().getPackageName();
 
+        startService(new Intent(this, BackgroundService.class));
+
         if (!isAccessibilitySettingsOn(getApplicationContext())) {
             {
                 startActivity(new Intent(this, AccessibilityNotEnabled.class));
             }
         }
+
 
         gv1 = (GridView) findViewById(R.id.gv);
         gv1.setAdapter(new ImageAdapter(this));
@@ -99,6 +104,14 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        //stopService(new Intent(this, BackgroundService.class));
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "destroyed", Toast.LENGTH_SHORT).show();
+        stopService(new Intent(this, BackgroundService.class));
     }
 }

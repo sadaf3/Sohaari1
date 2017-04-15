@@ -12,7 +12,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:paddingStart="8dp"
-        android:text="Mobile Number"
+        android:text="MMID, Mobile Number"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
 
@@ -32,7 +32,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginBottom="4dp"
             android:layout_marginStart="2dp"
-            android:text="Send to" />
+            android:text="Mobile no" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:background="@drawable/edittext_back">
 
             <EditText
-                android:id="@+id/aadhar_no"
+                android:id="@+id/mobile_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -52,7 +52,48 @@
                 android:drawableStart="@drawable/ic_call"
                 android:hint="Enter receiver's Mobile no"
                 android:inputType="number"
-                android:maxLength="12"
+                android:maxLength="10"
+                android:maxLines="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="clip_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="2dp"
+            android:text="MMID" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/edittext_back">
+
+            <EditText
+                android:id="@+id/mmid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_account_balance_black_24px"
+                android:hint="Enter receiver's MMID"
+                android:inputType="number"
+                android:maxLength="10"
                 android:maxLines="1" />
         </LinearLayout>
     </LinearLayout>
@@ -116,5 +157,4 @@
         android:text="continue"
         android:textSize="16sp"
         android:theme="@style/FlatButton" />
-
 </LinearLayout>

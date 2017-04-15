@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#ff502d"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.root.sohaari.MainActivity">
+    tools:context="com.example.root.sohaari.activity.MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -33,7 +32,7 @@
         android:fontFamily="serif"
         android:text="Get Started"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/button"
@@ -76,5 +75,5 @@
         android:layout_marginBottom="21dp"
         android:text="Don't have a UPI Pin?"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@android:color/black" />
 </RelativeLayout>

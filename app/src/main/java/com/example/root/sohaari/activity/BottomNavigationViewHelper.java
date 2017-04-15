@@ -1,4 +1,4 @@
-package com.example.root.sohaari;
+package com.example.root.sohaari.activity;
 
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;

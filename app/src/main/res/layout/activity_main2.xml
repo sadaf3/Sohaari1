@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.example.root.sohaari.Main2Activity">
+    tools:context="com.example.root.sohaari.activity.Main2Activity">
 
     <FrameLayout
         android:id="@+id/fr"

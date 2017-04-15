@@ -1,8 +1,10 @@
-package com.example.root.sohaari;
+package com.example.root.sohaari.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.example.root.sohaari.R;
 
 import static com.example.root.sohaari.utils.MakeCall.makeCall;
 

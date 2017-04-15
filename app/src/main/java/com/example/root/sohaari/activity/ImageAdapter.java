@@ -1,4 +1,4 @@
-package com.example.root.sohaari;
+package com.example.root.sohaari.activity;
 
 import android.content.Context;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+
+import com.example.root.sohaari.R;
 
 /**
  * Created by root on 9/4/17.
