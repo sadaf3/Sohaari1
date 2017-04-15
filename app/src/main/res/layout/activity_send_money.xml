@@ -21,10 +21,10 @@
     <FrameLayout
         android:id="@+id/sm"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="75dp"
         android:layout_below="@+id/toolbar"
         android:background="@color/colorPrimary"
-        android:theme="@style/AppTheme"
+
         android:visibility="gone">
 
         <TextView
@@ -70,6 +70,7 @@
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
+                android:alpha="0.8"
                 android:gravity="center"
                 android:src="@drawable/ic_contact_phone_black_24px" />
 
@@ -78,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40dp"
+                android:alpha="0.8"
                 android:gravity="center"
                 android:text="Mobile Number"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
@@ -96,6 +98,7 @@
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
+                android:alpha="0.8"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
                 android:src="@drawable/ic_fingerprint" />
@@ -105,6 +108,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:text="Aadhar Number"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
         </LinearLayout>
@@ -123,6 +127,7 @@
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
+                android:alpha="0.8"
                 android:gravity="center"
                 android:src="@drawable/ic_home_black_24px" />
 
@@ -131,6 +136,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:text="Payment Address"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
         </LinearLayout>
@@ -148,6 +154,7 @@
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
+                android:alpha="0.8"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
                 android:src="@drawable/ic_people_black_24px" />
@@ -156,6 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40dp"
+                android:alpha="0.8"
                 android:gravity="center"
                 android:text="Saved Beneficiary"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
@@ -175,6 +183,7 @@
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
+                android:alpha="0.8"
                 android:gravity="center"
                 android:src="@drawable/ic_account_balance_black_24px" />
 
@@ -183,6 +192,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:text="IFSC, Account Number"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
         </LinearLayout>
@@ -201,6 +211,7 @@
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
+                android:alpha="0.8"
                 android:gravity="center"
                 android:src="@drawable/ic_phone_iphone_black_24px" />
 
@@ -209,6 +220,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:text="MMID, Mobile Number"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
         </LinearLayout>

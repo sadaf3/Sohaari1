@@ -5,7 +5,7 @@
     </style>
 
     <style name="FlatButtonGreen" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:colorButtonNormal">@color/colorGreen</item>
+        <item name="android:textColor">@color/colorGreen</item>
+        <item name="android:colorButtonNormal">@color/colorPrimaryDark</item>
     </style>
 </resources>

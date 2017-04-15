@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary"> #fa611a </color>
-    <color name="colorPrimaryDark">   #d24401  </color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorGreen"> #3c8105 </color>
+    <color name="colorPrimary">#0091ea
+    </color>
+    <color name="colorPrimaryDark"> #0277bd </color>
+    <color name="colorAccent">#0288d1</color>
+    <color name="colorGreen">   #212121
+    </color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorBrandPrimaryAccent">#FF629F1D</color>
     <color name="horizontal_line_background">#22000000</color>
     <color name="light_blue">#2196f3</color>
-    <color name="toolbar_color">#e0e0e0</color>
+    <color name="toolbar_color">#0288d1</color>
 </resources>

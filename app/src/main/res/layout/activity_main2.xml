@@ -6,47 +6,58 @@
     android:layout_height="fill_parent"
     tools:context="com.example.root.sohaari.Main2Activity">
 
+
     <FrameLayout
         android:id="@+id/fr"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
-        android:theme="@style/AppTheme">
+        android:layout_height="100dp"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/HomeTheme">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
-            android:gravity="center"
+            android:layout_marginTop="7dp"
             android:text="@string/home"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
             android:textColor="@color/colorWhite" />
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/fr1"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@+id/fr"
-        android:background="@color/colorGreen">
+    <android.support.v4.widget.SwipeRefreshLayout
 
-        <TextView
+        android:id="@+id/swiperefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </android.support.v4.widget.SwipeRefreshLayout>
+        <FrameLayout
+            android:id="@+id/fr1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Balance"
-            android:textAlignment="center"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorWhite" />
-    </FrameLayout>
+            android:layout_height="95dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="45dp"
+
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Balance"
+                android:textAlignment="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorWhite" />
+        </FrameLayout>
+
 
     <FrameLayout
         android:id="@+id/main_container"
         android:layout_width="match_parent"
-        android:layout_marginTop="5dp"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/fr1">
+        android:layout_below="@+id/fr1"
+        android:layout_marginTop="5dp">
 
         <GridView
             android:id="@+id/gv"
@@ -70,4 +81,5 @@
         app:itemIconTint="@color/colorWhite"
         app:itemTextColor="@color/colorWhite"
         app:menu="@menu/bottom_nav_list" />
+
 </RelativeLayout>
