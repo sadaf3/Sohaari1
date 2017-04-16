@@ -41,6 +41,7 @@
             android:background="@drawable/edittext_back">
 
             <EditText
+                android:id="@+id/ifsc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -81,6 +82,7 @@
             android:background="@drawable/edittext_back">
 
             <EditText
+                android:id="@+id/account_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

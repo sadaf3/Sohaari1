@@ -3,15 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.root.sohaari.SendMoney">
+    tools:context="com.example.root.sohaari.activity.SendMoney">
 
     <FrameLayout
-        android:visibility="gone"
-        android:background="#ffffff"
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar" />
+        android:layout_below="@+id/toolbar"
+        android:background="#ffffff" />
 
     <FrameLayout
         android:id="@+id/sm"

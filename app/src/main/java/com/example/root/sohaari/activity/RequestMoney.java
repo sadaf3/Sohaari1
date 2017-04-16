@@ -1,12 +1,12 @@
-package com.example.root.sohaari;
+package com.example.root.sohaari.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import static com.example.root.sohaari.utils.MakeCall.makeCall;
+import com.example.root.sohaari.R;
 
-public class PendingRequest extends AppCompatActivity {
+public class RequestMoney extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -17,23 +17,23 @@ public class PendingRequest extends AppCompatActivity {
     public void setUpToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar == null) return;
-        toolbar.setTitle("Pending Requests");
+        toolbar.setTitle("Request Money");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_request_money);
+
+        setUpToolbar();
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pending_request);
-        setUpToolbar();
-        makeCall("*99*5", this, this);
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }
