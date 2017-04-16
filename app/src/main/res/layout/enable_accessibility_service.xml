@@ -26,7 +26,7 @@
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:visibility="gone"
-            app:backgroundTint="@color/colorBrandPrimaryAccent" />
+            app:backgroundTint="@color/colorPrimary" />
 
         <Space
             android:layout_width="match_parent"

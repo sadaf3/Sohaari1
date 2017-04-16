@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 
 import com.example.root.sohaari.activity.AccessibilityNotEnabled;
 import com.example.root.sohaari.service.USSDAccessibilityService;
@@ -18,6 +19,7 @@ import com.example.root.sohaari.service.USSDAccessibilityService;
 public class Main2Activity extends AppCompatActivity {
     public static String PACKAGE_NAME;
     GridView gv1;
+    LinearLayout ll1,ll2,ll3,ll4;
     String TAG = "main2activity";
 
     @Override
@@ -33,30 +35,47 @@ public class Main2Activity extends AppCompatActivity {
             }
         }
 
-        gv1 = (GridView) findViewById(R.id.gv);
-        gv1.setAdapter(new ImageAdapter(this));
+        ll1=(LinearLayout)findViewById(R.id.send) ;
+        ll2=(LinearLayout)findViewById(R.id.request);
+        ll3=(LinearLayout)findViewById(R.id.tran);
+        ll4=(LinearLayout)findViewById(R.id.pend);
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        gv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ll1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    Intent go = new Intent(Main2Activity.this, SendMoney.class);
-                    startActivity(go);
-                } else if (position == 1) {
-                    Intent go = new Intent(Main2Activity.this, RequestMoney.class);
-                    startActivity(go);
-                } else if (position == 2) {
-                    Intent go = new Intent(Main2Activity.this, Transactions.class);
-                    startActivity(go);
-                } else if (position == 3) {
-                    Intent go = new Intent(Main2Activity.this, PendingRequest.class);
-                    startActivity(go);
-                }
+            public void onClick(View v) {
+                Intent go = new Intent(Main2Activity.this, SendMoney.class);
+                startActivity(go);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
+        ll2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go = new Intent(Main2Activity.this, RequestMoney.class);
+                startActivity(go);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+        ll3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go = new Intent(Main2Activity.this, Transactions.class);
+                startActivity(go);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+        ll4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go = new Intent(Main2Activity.this, PendingRequest.class);
+                startActivity(go);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+
     }
 
     private boolean isAccessibilitySettingsOn(Context mContext) {

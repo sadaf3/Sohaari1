@@ -1,11 +1,11 @@
 <resources>
     <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:colorButtonNormal">@color/light_blue</item>
+        <item name="android:colorButtonNormal">@color/colorPrimary</item>
     </style>
 
     <style name="FlatButtonGreen" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:textColor">@color/colorGreen</item>
+        <item name="android:textColor">@color/colorGrey</item>
         <item name="android:colorButtonNormal">@color/colorPrimaryDark</item>
     </style>
 </resources>

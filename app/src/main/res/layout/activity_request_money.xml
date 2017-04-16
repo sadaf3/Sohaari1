@@ -9,8 +9,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/toolbar_color"
-        android:titleTextColor="@color/colorGreen" />
+        android:background="@color/colorAccent"
+        android:titleTextColor="@color/colorGrey" />
 
     <TextView
         android:layout_width="match_parent"
