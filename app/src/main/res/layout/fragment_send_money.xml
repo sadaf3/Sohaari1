@@ -65,6 +65,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:src="@drawable/ic_contact_phone_black_24px" />
 
             <TextView
@@ -92,6 +93,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:src="@drawable/ic_fingerprint" />
 
             <TextView
@@ -118,6 +120,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:src="@drawable/ic_home_black_24px" />
 
             <TextView
@@ -170,6 +173,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:src="@drawable/ic_account_balance_black_24px" />
 
             <TextView
@@ -196,6 +200,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
+                android:alpha="0.8"
                 android:src="@drawable/ic_phone_iphone_black_24px" />
 
             <TextView

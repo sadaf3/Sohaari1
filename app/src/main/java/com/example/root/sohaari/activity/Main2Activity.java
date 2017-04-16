@@ -1,31 +1,37 @@
-package com.example.root.sohaari;
+package com.example.root.sohaari.activity;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.LinearLayout;
 
-import com.example.root.sohaari.activity.AccessibilityNotEnabled;
+import com.example.root.sohaari.R;
+
 import com.example.root.sohaari.service.USSDAccessibilityService;
 
 public class Main2Activity extends AppCompatActivity {
     public static String PACKAGE_NAME;
-    GridView gv1;
-    LinearLayout ll1,ll2,ll3,ll4;
+    android.support.v4.app.Fragment fr;
+
     String TAG = "main2activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        fr = new HomeFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fr).commit();
 
         PACKAGE_NAME = getApplicationContext().getPackageName();
 
@@ -33,49 +39,49 @@ public class Main2Activity extends AppCompatActivity {
             {
                 startActivity(new Intent(this, AccessibilityNotEnabled.class));
             }
+
+
+
         }
 
-        ll1=(LinearLayout)findViewById(R.id.send) ;
-        ll2=(LinearLayout)findViewById(R.id.request);
-        ll3=(LinearLayout)findViewById(R.id.tran);
-        ll4=(LinearLayout)findViewById(R.id.pend);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        ll1.setOnClickListener(new View.OnClickListener() {
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Intent go = new Intent(Main2Activity.this, SendMoney.class);
-                startActivity(go);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-            }
-        });
-        ll2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent go = new Intent(Main2Activity.this, RequestMoney.class);
-                startActivity(go);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-            }
-        });
-        ll3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent go = new Intent(Main2Activity.this, Transactions.class);
-                startActivity(go);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-            }
-        });
-        ll4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent go = new Intent(Main2Activity.this, PendingRequest.class);
-                startActivity(go);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                if (id == (R.id.menu_one)) {
+                    fr = new HomeFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fr).commit();
+                } else if (id == (R.id.menu_two)) {
+
+                } else if (id == (R.id.menu_three)) {
+                    fr = new MyProfile();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fr).commit();
+
+                } else if (id == (R.id.menu_four)) {
+
+                }
+                return true;
             }
         });
 
+    }
+
+    public void changeFragment(Fragment fr) {
+        if (findViewById(R.id.fragment_container) != null) {
+            FragmentManager frm = getFragmentManager();
+            FragmentTransaction trans = frm.beginTransaction();
+            /*trans.setCustomAnimations(R.anim.slide_from_right,
+                    R.anim.slide_to_left,
+                    R.anim.slide_from_left,
+                    R.anim.slide_to_right);*/
+            trans.replace(R.id.fragment_container, fr).addToBackStack("sendmoney");
+            trans.commit();
+        }
     }
 
     private boolean isAccessibilitySettingsOn(Context mContext) {

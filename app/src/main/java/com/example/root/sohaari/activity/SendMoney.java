@@ -36,7 +36,7 @@ public class SendMoney extends AppCompatActivity {
     public void setUpToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar == null) return;
-        toolbar.setTitle("Send Money to");
+        toolbar.setTitle("Send Money To");
         //toolbar.setNavigationIcon(R.drawable.ic_close);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

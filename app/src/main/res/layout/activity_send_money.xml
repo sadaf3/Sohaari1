@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.root.sohaari.SendMoney">
+    tools:context="com.example.root.sohaari.activity.SendMoney">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar" />
 
-    <FrameLayout
+    <!--FrameLayout
         android:id="@+id/sm"
         android:layout_width="match_parent"
         android:layout_height="75dp"
@@ -223,6 +223,6 @@
                 android:alpha="0.8"
                 android:text="MMID, Mobile Number"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
-        </LinearLayout>
-    </RelativeLayout>
+        </LinearLayout>-->
+
 </RelativeLayout>
