@@ -1,4 +1,4 @@
-package com.example.root.sohaari.activity;
+package com.example.root.sohaari.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,7 +14,7 @@ import com.example.root.sohaari.R;
  */
 
 public class SendMoneyFragment extends android.support.v4.app.Fragment {
-    LinearLayout frame1, frame2, frame3, frame4, frame5, frame6;
+    LinearLayout l1, l2, l3, l4, l5;
     Fragment fr;
     View view;
 
@@ -22,51 +22,44 @@ public class SendMoneyFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_send_money, container, false);
 
-        frame1 = (LinearLayout) view.findViewById(R.id.frame1);
-        frame2 = (LinearLayout) view.findViewById(R.id.frame2);
-        frame3 = (LinearLayout) view.findViewById(R.id.frame3);
-        frame4 = (LinearLayout) view.findViewById(R.id.frame4);
-        frame5 = (LinearLayout) view.findViewById(R.id.frame5);
-        frame6 = (LinearLayout) view.findViewById(R.id.frame6);
-        frame1.setOnClickListener(new View.OnClickListener() {
+        l1 = (LinearLayout) view.findViewById(R.id.mobile_number);
+        l2 = (LinearLayout) view.findViewById(R.id.aadhar_number);
+        l3 = (LinearLayout) view.findViewById(R.id.payment_address);
+        l4 = (LinearLayout) view.findViewById(R.id.saved_beneficiary);
+        l5 = (LinearLayout) view.findViewById(R.id.ifsc_account);
+
+        l1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fr = new SendToMobile();
                 changeFragment(fr);
             }
         });
-        frame2.setOnClickListener(new View.OnClickListener() {
+        l2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fr = new SendToAadhar();
                 changeFragment(fr);
             }
         });
-        frame3.setOnClickListener(new View.OnClickListener() {
+        l3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fr = new SendToPaymentAddress();
                 changeFragment(fr);
             }
         });
-        frame4.setOnClickListener(new View.OnClickListener() {
+        l4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fr = new SendToBeneficiary();
                 changeFragment(fr);
             }
         });
-        frame5.setOnClickListener(new View.OnClickListener() {
+        l5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fr = new SendToIFSC();
-                changeFragment(fr);
-            }
-        });
-        frame6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fr = new SendToMMID();
                 changeFragment(fr);
             }
         });

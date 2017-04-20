@@ -1,4 +1,4 @@
-package com.example.root.sohaari.activity;
+package com.example.root.sohaari.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -31,7 +31,7 @@ public class SendToIFSC extends android.support.v4.app.Fragment {
         send_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeCall("*99*5*" + ifsc.getText().toString() + "*" +
+                makeCall("*99*1*5*" + ifsc.getText().toString() + "*" +
                                 account_no.getText().toString() + "*" +
                                 amount.getText().toString(),
                         getContext(), getActivity());

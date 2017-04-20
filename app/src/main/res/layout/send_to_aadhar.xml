@@ -42,18 +42,13 @@
 
             <EditText
                 android:id="@+id/aadhar_no"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:background="@null"
-                android:drawablePadding="8dp"
                 android:drawableStart="@drawable/ic_call"
                 android:hint="Enter receiver's Aadhar no"
                 android:inputType="number"
-                android:maxLength="12"
-                android:maxLines="1" />
+                android:maxLength="12" />
         </LinearLayout>
     </LinearLayout>
 
@@ -83,18 +78,13 @@
 
             <EditText
                 android:id="@+id/amount"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:background="@null"
-                android:drawablePadding="8dp"
                 android:drawableStart="@drawable/ic_money"
                 android:hint="Enter amount (max ₹5000)"
                 android:inputType="number"
-                android:maxLength="4"
-                android:maxLines="1" />
+                android:maxLength="4" />
         </LinearLayout>
     </LinearLayout>
 

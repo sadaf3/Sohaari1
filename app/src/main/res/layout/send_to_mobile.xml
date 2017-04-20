@@ -22,7 +22,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="clip_vertical"
         android:orientation="vertical">
 
@@ -42,18 +42,13 @@
 
             <EditText
                 android:id="@+id/mobile_no"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:background="@null"
-                android:drawablePadding="8dp"
                 android:drawableStart="@drawable/ic_call"
                 android:hint="Enter receiver's Mobile no"
                 android:inputType="number"
-                android:maxLength="12"
-                android:maxLines="1" />
+                android:maxLength="12" />
         </LinearLayout>
     </LinearLayout>
 
@@ -83,18 +78,13 @@
 
             <EditText
                 android:id="@+id/amount"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:background="@null"
-                android:drawablePadding="8dp"
-                android:drawableStart="@drawable/ic_money"
+                android:drawableStart="@drawable/ic_rupee"
                 android:hint="Enter amount (max ₹5000)"
                 android:inputType="number"
-                android:maxLength="4"
-                android:maxLines="1" />
+                android:maxLength="4" />
         </LinearLayout>
     </LinearLayout>
 
@@ -110,8 +100,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingEnd="40dp"
-        android:paddingStart="40dp"
         android:stateListAnimator="@null"
         android:text="continue"
         android:textSize="16sp"

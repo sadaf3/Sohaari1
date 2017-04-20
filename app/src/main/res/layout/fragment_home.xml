@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.root.sohaari.activity.Main2Activity">
+
+    <RelativeLayout
+        android:id="@+id/balance"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/main_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="Balance"
+            android:textColor="@android:color/white"
+            android:textSize="36dp" />
+
+        <Button
+            android:id="@+id/update_balance"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="Update"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/services"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/balance"
+        android:background="#eaeaea"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="BANKING SERVICES"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/send"
+                    android:layout_width="@dimen/image_height"
+                    android:layout_height="@dimen/image_height"
+                    android:background="@drawable/background_circle"
+                    android:clickable="true"
+                    android:padding="@dimen/image_padding"
+                    android:src="@drawable/ic_send" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/button_text_padding"
+                    android:text="Send" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/request"
+                    android:layout_width="@dimen/image_height"
+                    android:layout_height="@dimen/image_height"
+                    android:background="@drawable/background_circle"
+                    android:clickable="true"
+                    android:padding="@dimen/image_padding"
+                    android:src="@drawable/ic_receive" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/button_text_padding"
+                    android:text="Request" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/recharge"
+                    android:layout_width="@dimen/image_height"
+                    android:layout_height="@dimen/image_height"
+                    android:background="@drawable/background_circle"
+                    android:clickable="true"
+                    android:padding="@dimen/image_padding"
+                    android:src="@drawable/ic_phone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/button_text_padding"
+                    android:text="Recharge" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/services"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="OTHER SERVICES"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_rupee"
+                android:padding="@dimen/list_padding"
+                android:text="Transactions"
+                android:textSize="@dimen/list_text_size_medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="48dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_rupee"
+                android:padding="@dimen/list_padding"
+                android:text="Pending Requests"
+                android:textSize="@dimen/list_text_size_medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="48dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_rupee"
+                android:padding="@dimen/list_padding"
+                android:text="UPI PIN"
+                android:textSize="@dimen/list_text_size_medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="48dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_rupee"
+                android:padding="@dimen/list_padding"
+                android:text="Change Language"
+                android:textSize="@dimen/list_text_size_medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="48dp"
+                android:background="@color/divider"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/services"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="Choose an option"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/transactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_small">
+
+                <ImageView
+                    android:layout_width="@dimen/image_height_medium"
+                    android:layout_height="@dimen/image_height_medium"
+                    android:background="@drawable/background_circle"
+                    android:backgroundTint="@color/drawable_back_light"
+                    android:clickable="true"
+                    android:padding="@dimen/image_padding"
+                    android:src="@drawable/ic_phone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/list_padding_medium"
+                    android:text="Transaction"
+                    android:textSize="@dimen/list_text_size_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin_start"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:id="@+id/pending_requests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_small">
+
+                <ImageView
+                    android:layout_width="@dimen/image_height_medium"
+                    android:layout_height="@dimen/image_height_medium"
+                    android:background="@drawable/background_circle"
+                    android:backgroundTint="@color/drawable_back_light"
+                    android:clickable="true"
+                    android:padding="@dimen/image_padding"
+                    android:src="@drawable/ic_fingerprint"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/list_padding_medium"
+                    android:text="Pending Requests"
+                    android:textSize="@dimen/list_text_size_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin_start"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:id="@+id/upi_pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_small">
+
+                <ImageView
+                    android:layout_width="@dimen/image_height_medium"
+                    android:layout_height="@dimen/image_height_medium"
+                    android:background="@drawable/background_circle"
+                    android:backgroundTint="@color/drawable_back_light"
+                    android:clickable="true"
+                    android:padding="@dimen/image_padding"
+                    android:src="@drawable/ic_home"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/list_padding_medium"
+                    android:text="UPI PIN"
+                    android:textSize="@dimen/list_text_size_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin_start"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:id="@+id/language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_small">
+
+                <ImageView
+                    android:layout_width="@dimen/image_height_medium"
+                    android:layout_height="@dimen/image_height_medium"
+                    android:background="@drawable/background_circle"
+                    android:backgroundTint="@color/drawable_back_light"
+                    android:clickable="true"
+                    android:padding="@dimen/image_padding"
+                    android:src="@drawable/ic_people"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/list_padding_medium"
+                    android:text="Change Language"
+                    android:textSize="@dimen/list_text_size_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin_start"
+                android:background="@color/divider"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

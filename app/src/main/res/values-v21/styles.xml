@@ -1,7 +1,22 @@
 <resources>
-    <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless">
+
+    <style name="FlatButton" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingEnd">40dp</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:paddingBottom">18dp</item>
         <item name="android:colorButtonNormal">@color/colorPrimary</item>
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:background">@null</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginTop">10dp</item>
     </style>
 
     <style name="FlatButtonGreen" parent="Widget.AppCompat.Button.Borderless">

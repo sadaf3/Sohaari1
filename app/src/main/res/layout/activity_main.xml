@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     android:theme="@style/AppTheme"
-    tools:context="com.example.root.sohaari.MainActivity">
+    tools:context="com.example.root.sohaari.activity.MainActivity">
 
     <!--<ImageView
         android:layout_width="match_parent"
@@ -49,8 +49,22 @@
         android:paddingTop="20dp"
         android:stateListAnimator="@null"
         android:text="Enter"
-        android:textSize="18dp"
-        android:theme="@style/FlatButtonGreen" />
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/button_verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="20dp"
+        android:stateListAnimator="@null"
+        android:text="Verify"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/button2"
@@ -65,8 +79,7 @@
         android:paddingTop="20dp"
         android:stateListAnimator="@null"
         android:text="Get UPI Pin"
-        android:textSize="18dp"
-        android:theme="@style/FlatButtonGreen" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/textView4"

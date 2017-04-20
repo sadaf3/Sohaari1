@@ -34,6 +34,7 @@ public class AccessibilityNotEnabled extends Activity {
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
                         try {
                             startActivity(intent);
+                            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                         } catch (ActivityNotFoundException e) {
                             // TODO log exception
                         }

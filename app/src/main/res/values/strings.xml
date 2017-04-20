@@ -3,7 +3,7 @@
     <string name="home">Home</string>
     <string name="sendmoney">Send Money To</string>
     <string name="menu_home">Home</string>
-    <string name="requestmoney">request money</string>
+    <string name="requestmoney">Request money</string>
     <string name="menu_lang">Language</string>
     <string name="menu_profile">My Profile</string>
     <string name="menu_support">Support</string>
@@ -13,4 +13,19 @@
     <string name="from_accessibility_settings">from accessibility settings</string>
     <string name="accessibility_service_not_enabled_message">"If accessibility service is turned off for this app, we can't fetch your bank balance. We read USSD message only to fetch your bank balance, that's it. So it is absolutely safe to use."</string>
     <string name="accessibility_label"><b>●● Offline Banking ●●</b></string>
+    <string name="step1a">1. First, download and install the BHIM App.</string>
+    <string name="download_phonepe">Download PhonePe</string>
+    <string name="step2">2. Open the app and follow the initial instructions.</string>
+    <string name="step3">3. Verify your mobile number(standard SMS charges may apply). In case of dual sim, select the SIM that is linked to your bank account.</string>
+    <string name="step4">4. Enter your name, valid email and set 4 Digit password.</string>
+    <string name="step5">5. Proceed to the next step and click on Create New VPA(This will be your upi address used for future transactions).</string>
+    <string name="step6">6. Select your bank and then your bank details will be fetched automatically.</string>
+    <string name="step7">7. Click on \'Set MPIN\'.</string>
+    <string name="step8">8. Enter details of your debit card and click on verify.</string>
+    <string name="step9">9. You will get an OTP from your bank. Enter that OTP.</string>
+    <string name="step10">10. Enter a 6-digit UPI PIN and re-enter to confirm. Please note that this UPI Pin will be used in the future for your all transaction. So don\'t share this pin to anyone.</string>
+    <string name="step11">11. After successful registration click OK and open BHiM Offline app and click on UPDATE BALANCE.</string>
+    <string name="heading_register_for_upi">If you haven\'t registered on UPI, follow these steps</string>
+    <string name="peding_requests">Pending Requests</string>
+    <string name="button_continue">Continue</string>
 </resources>

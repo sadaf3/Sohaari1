@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.example.root.sohaari.R;
+import com.example.root.sohaari.fragments.SendMoneyFragment;
 
 public class SendMoney extends AppCompatActivity {
     //FrameLayout fragment_container;
@@ -13,6 +14,9 @@ public class SendMoney extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money);
+
+        //animation
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
         setUpToolbar();
         if (findViewById(R.id.fragment_container) != null) {
@@ -36,16 +40,8 @@ public class SendMoney extends AppCompatActivity {
     public void setUpToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar == null) return;
-        toolbar.setTitle("Send Money To");
-        //toolbar.setNavigationIcon(R.drawable.ic_close);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
     }
 }

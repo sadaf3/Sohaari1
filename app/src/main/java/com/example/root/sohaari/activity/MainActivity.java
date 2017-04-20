@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.root.sohaari.R;
-import com.example.root.sohaari.service.BackgroundService;
+
+import static com.example.root.sohaari.fragments.Home.checkUSSD;
+import static com.example.root.sohaari.utils.MakeCall.makeCall;
 
 public class MainActivity extends AppCompatActivity {
-    Button bt1;
+    Button bt1, button_verify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +20,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bt1 = (Button) findViewById(R.id.button);
+        button_verify = (Button) findViewById(R.id.button_verify);
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Main2Activity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
+        button_verify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkUSSD = 10;
+                makeCall("*99*4*3", getBaseContext(), MainActivity.this);
             }
         });
     }

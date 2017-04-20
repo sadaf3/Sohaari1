@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
     <FrameLayout
         android:id="@+id/fr"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/colorPrimaryDark"
-        android:theme="@style/HomeTheme">
+        android:theme="@style/HomeTheme"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,135 +24,159 @@
             android:textColor="@color/colorWhite" />
     </FrameLayout>
 
-    <!--<android.support.v4.widget.SwipeRefreshLayout
-
-        android:id="@+id/swiperefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></android.support.v4.widget.SwipeRefreshLayout>-->
-
-    <FrameLayout
-        android:id="@+id/fr1"
+    <android.support.v7.widget.CardView
+        android:id="@+id/balanceCard"
         android:layout_width="match_parent"
         android:layout_height="95dp"
         android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp"
         android:layout_marginTop="45dp"
-
-        android:background="@color/colorPrimary">
+        android:clickable="true"
+        android:onClick="checkBalance"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="0dp">
 
         <TextView
+            android:id="@+id/main_balance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Balance"
             android:textAlignment="center"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorWhite" />
-    </FrameLayout>
+            android:textColor="@color/colorWhite"
+            android:textSize="50dp" />
+    </android.support.v7.widget.CardView>
 
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/main_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/fr1"
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/balanceCard"
         android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/send"
-            android:layout_width="173dp"
-            android:layout_height="180dp"
-            android:background="@color/colorWhite"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+            <LinearLayout
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/imgsend" />
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="30dp"
-                android:text="Send Money" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight="8"
+                    android:src="@drawable/imgsend" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Send Money" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/request"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight="8"
+                    android:src="@drawable/imgrequest" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Request Money" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/tran"
-            android:layout_width="173dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="183dp"
-            android:background="@color/colorWhite"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <ImageView
-                android:layout_width="105dp"
-                android:layout_height="105dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/imgtran" />
+            <LinearLayout
+                android:id="@+id/tran"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="10dp"
-                android:text="Transactions" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="8"
+                    android:src="@drawable/imgtran" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Transactions" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pend"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="8"
+                    android:src="@drawable/imgpend" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Pending Request" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/pend"
-            android:layout_width="173dp"
-            android:layout_height="180dp"
-            android:layout_marginLeft="176dp"
-
-            android:layout_marginTop="183dp"
-            android:background="@color/colorWhite"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/imgpend" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="38dp"
-                android:text="Pending Request" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/request"
-            android:layout_width="173dp"
-            android:layout_height="180dp"
-            android:layout_marginLeft="176dp"
-            android:background="@color/colorWhite"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/imgrequest" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:text="Request Money" />
-        </LinearLayout>
-    </FrameLayout>
+    </LinearLayout>
 </RelativeLayout>

@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.root.sohaari.PendingRequest">
+    tools:context="com.example.root.sohaari.activity.PendingRequest">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/toolbar_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:titleTextColor="@color/colorGrey" />
+        android:background="@color/colorPrimary"
+        app:title="@string/peding_requests"
+        app:titleTextColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/pending_requests_balance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="No Pending Requests found"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/update_pending_requests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#4dae27"
+        android:clickable="true"
+        android:stateListAnimator="@null"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:theme="@style/FlatButton" />
 </RelativeLayout>

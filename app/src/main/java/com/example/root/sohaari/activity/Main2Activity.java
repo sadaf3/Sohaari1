@@ -1,49 +1,60 @@
 package com.example.root.sohaari.activity;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
 
 import com.example.root.sohaari.R;
-
+import com.example.root.sohaari.fragments.Home;
+import com.example.root.sohaari.fragments.SupportFragment;
+import com.example.root.sohaari.service.BackgroundService;
 import com.example.root.sohaari.service.USSDAccessibilityService;
 
 public class Main2Activity extends AppCompatActivity {
+    public static final String myPref = "com.app.sohaari";
+    public static final String BALANCE = "balance";
+    public static final String PENDING_REQUESTS = "pending requests";
+    public static final String TRANSACTIONS = "transactions";
     public static String PACKAGE_NAME;
-    android.support.v4.app.Fragment fr;
-
+    public int currentFragment;
     String TAG = "main2activity";
+    Fragment fr;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        fr = new HomeFragment();
+
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.home));
+        //toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+        fr = new Home();
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fr).commit();
+        currentFragment = 1;
 
         PACKAGE_NAME = getApplicationContext().getPackageName();
+        startService(new Intent(this, BackgroundService.class));
 
         if (!isAccessibilitySettingsOn(getApplicationContext())) {
             {
                 startActivity(new Intent(this, AccessibilityNotEnabled.class));
             }
-
-
-
         }
-
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
@@ -53,35 +64,46 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                if (id == (R.id.menu_one)) {
-                    fr = new HomeFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fr).commit();
-                } else if (id == (R.id.menu_two)) {
-
-                } else if (id == (R.id.menu_three)) {
+                if (id == (R.id.menu_one) && currentFragment != 1) {
+                    fr = new Home();
+                    FragmentTransaction fc = getSupportFragmentManager().beginTransaction();
+                    fc.setCustomAnimations(R.anim.slide_from_left, R.anim.slide_to_right);
+                    fc.replace(R.id.frag_container, fr).commit();
+                    setUpToolbar(getResources().getString(R.string.home));
+                    //setUpToolbar("");
+                    currentFragment = 1;
+                } else if (id == (R.id.menu_three) && currentFragment != 2) {
                     fr = new MyProfile();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fr).commit();
-
-                } else if (id == (R.id.menu_four)) {
-
+                    FragmentTransaction fc = getSupportFragmentManager().beginTransaction();
+                    if (currentFragment == 1)
+                        fc.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+                    else
+                        fc.setCustomAnimations(R.anim.slide_from_left, R.anim.slide_to_right);
+                    fc.replace(R.id.frag_container, fr).commit();
+                    setUpToolbar(getResources().getString(R.string.menu_profile));
+                    currentFragment = 2;
+                } else if (id == (R.id.menu_four) && currentFragment != 3) {
+                    fr = new SupportFragment();
+                    FragmentTransaction fc = getSupportFragmentManager().beginTransaction();
+                    fc.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+                    fc.replace(R.id.frag_container, fr).commit();
+                    setUpToolbar(getResources().getString(R.string.menu_support));
+                    currentFragment = 3;
                 }
                 return true;
             }
         });
-
     }
 
-    public void changeFragment(Fragment fr) {
-        if (findViewById(R.id.fragment_container) != null) {
-            FragmentManager frm = getFragmentManager();
-            FragmentTransaction trans = frm.beginTransaction();
-            /*trans.setCustomAnimations(R.anim.slide_from_right,
-                    R.anim.slide_to_left,
-                    R.anim.slide_from_left,
-                    R.anim.slide_to_right);*/
-            trans.replace(R.id.fragment_container, fr).addToBackStack("sendmoney");
-            trans.commit();
-        }
+    public void setUpToolbar(String title) {
+        if (toolbar == null) return;
+        toolbar.setTitle(title);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 
     private boolean isAccessibilitySettingsOn(Context mContext) {
@@ -125,5 +147,11 @@ public class Main2Activity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(new Intent(this, BackgroundService.class));
     }
 }

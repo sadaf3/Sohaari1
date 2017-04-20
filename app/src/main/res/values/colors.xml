@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0091ea
-    </color>
-    <color name="colorPrimaryDark"> #0277bd </color>
-    <color name="colorAccent">#0288d1</color>
-    <color name="colorGrey">   #212121
-    </color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#283593</color>
+    <color name="colorAccent">#9C27B0</color>
+    <color name="colorGrey">#212121</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorBrandPrimaryAccent">#FF629F1D</color>
     <color name="horizontal_line_background">#22000000</color>
     <color name="light_blue">#2196f3</color>
     <color name="toolbar_color">#0288d1</color>
+    <color name="divider">#e6e6e6</color>
+    <color name="drawable_back_light">#f4f4f4</color>
+    <color name="drawable_back_medium">#e4e4e4</color>
+    <color name="textColorBlack">#000000</color>
 </resources>
