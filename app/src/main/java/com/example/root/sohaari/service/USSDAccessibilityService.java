@@ -4,13 +4,14 @@ import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Toast;
 
 import com.example.root.sohaari.activity.Main2Activity;
+import com.example.root.sohaari.activity.MainActivity;
 import com.example.root.sohaari.utils.BalanceEventBus;
 import com.example.root.sohaari.utils.CheckBackgroundService;
 
@@ -22,6 +23,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.example.root.sohaari.fragments.Home.checkUSSD;
+import static com.example.root.sohaari.utils.Constants.ISVERIFIED;
+import static com.example.root.sohaari.utils.Constants.myPref;
 
 /**
  * Created by rahul on 1/2/2017.
@@ -61,32 +64,67 @@ public class USSDAccessibilityService extends AccessibilityService {
         if (TextUtils.isEmpty(text)) return;
 
         if (checkUSSD == 1) {
-            performGlobalAction(GLOBAL_ACTION_BACK);
             parseBankBalance(text.trim());
         } else if (checkUSSD == 2) {
             parseTransactionBalance(text.trim());
             checkUSSD = 0;
         } else if (checkUSSD == 3) {
-            performGlobalAction(GLOBAL_ACTION_BACK);
             parseTransactionBalance(text.trim());
             checkUSSD = 0;
-        } else if (checkUSSD == 10){
-            performGlobalAction(GLOBAL_ACTION_BACK);
+        } else if (checkUSSD == 10) {
+            Log.d("eventbus+accessibility", "vertifying number");
             parseUserDetails(text.toLowerCase().trim());
-            checkUSSD = 0;
+            //checkUSSD = 0;
         }
         Log.d("bhimService2", text);
     }
 
     private void parseUserDetails(String text) {
-        String tokens[] = text.toLowerCase().split("[:,.\\s+]]");
-        ArrayList<String> keywords  = new ArrayList<>(Arrays.asList(tokens));
-        if (keywords.contains("not registered on upi")){
+        text = text.replace("[", "");
+        text = text.replace("]", "");
+        String tokens[] = text.toLowerCase().split("[:,.\\s]+");
+        ArrayList<String> keywords = new ArrayList<>(Arrays.asList(tokens));
+        String details = "";
 
+        String detailTokens[] = text.toLowerCase().split("(name:\\s*|payment address:\\s*|bank account linked:\\s*|upi pin\\s*)");
+        ArrayList<String> detailKeywords = new ArrayList<>(Arrays.asList(detailTokens));
+
+        Log.d("eventbus+Accessibility1", keywords.toString());
+        Log.d("eventbus+Accessibility3", detailKeywords.toString());
+
+
+        if (keywords.contains("name") || keywords.contains("payment") || keywords.contains("bank") || keywords.contains("upi")) {
+            Log.d("eventbus+Accessibility4", "found");
+            for (int i = 0; i < detailKeywords.size(); i++) {
+                while (detailKeywords.get(i).equals("") || detailKeywords.get(i) == null) {
+                    //detailKeywords.remove(i);
+                    Log.d("eventbus+while", String.valueOf(i));
+                    i++;
+                }
+                Log.d("eventbus+outside_while", String.valueOf(i));
+
+                details = details + (detailKeywords.get(i) + ":");
+                performGlobalAction(GLOBAL_ACTION_BACK);
+            }
+        } else {
+            details = "not found";
         }
+        details = details.replace("\n", "");
+        details = details.replace("\t", "");
+        //state bank customer:9872497727@upi:state bank of india xxxxxx7369:set, ok:
+        Log.d("eventbus+Accessibility2", details);
+        EventBus.getDefault().post(new BalanceEventBus(details));
     }
 
+    /*
+    state bank customer
+                                                                                   :9872497727@upi
+                                                                                   :state bank of india xxxxxx7369
+                                                                                   :set, ok:
+     */
     private void parseTransactionBalance(String text) {
+        performGlobalAction(GLOBAL_ACTION_BACK);
+
         EventBus.getDefault().post(new BalanceEventBus(text));
         Log.d("eventbus3", text);
     }
@@ -96,7 +134,9 @@ public class USSDAccessibilityService extends AccessibilityService {
         //[[your account balance is rs, 8618.40, ok]]
         //[[enter 6  digit upi pin for your state bank of india account no, xxxxxx7369, cancel, send]]
 
-        String tokens[] = text.toLowerCase().split("[:,.\\s]*\\s+");
+        performGlobalAction(GLOBAL_ACTION_BACK);
+
+        String tokens[] = text.toLowerCase().split("[:,.]*\\s+");
         ArrayList<String> keywords = new ArrayList<>(Arrays.asList(tokens));
         if (keywords.contains("rs")) {
             String balance = keywords.get(keywords.indexOf("rs") + 1);
@@ -113,11 +153,21 @@ public class USSDAccessibilityService extends AccessibilityService {
         Log.d("bhimService", "USSDAccessibilityService connected");
 
         if (CheckBackgroundService.isAccessibilityEnabled(getApplicationContext())) {
-            Toast.makeText(this, "connected", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, Main2Activity.class);
+            //Toast.makeText(this, "connected", Toast.LENGTH_SHORT).show();
+            SharedPreferences sharedPreferences = getSharedPreferences(myPref, 0);
+            Intent intent;
+            if (sharedPreferences.getBoolean(ISVERIFIED, false)) {
+                intent = new Intent(this, Main2Activity.class);
+                Log.d("bhimService", "verified");
+
+            } else {
+                intent = new Intent(this, MainActivity.class);
+                Log.d("bhimService", "not verified");
+            }
             //addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             try {
                 startActivity(intent);
                 Log.d("bhimService", "Service connected");

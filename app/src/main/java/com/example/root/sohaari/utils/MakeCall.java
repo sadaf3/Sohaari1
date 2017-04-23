@@ -15,8 +15,10 @@ import android.support.v4.app.ActivityCompat;
 public class MakeCall {
     public static int PERMISSION_ALL = 1;
     public static String[] PERMISSIONS = {Manifest.permission.CALL_PHONE};
+    //Context context;
 
     public static void makeCall(final String ussdCode, final Context context, final Activity activity) {
+        //this.context = context;
         new Thread(new Runnable() {
             @Override
             public void run() {

@@ -22,7 +22,7 @@
         android:layout_marginBottom="60dp"
         android:gravity="center"
         android:padding="36dp"
-        android:text="Transaction details never checked"
+        android:text="@string/transaction_details_never_checked"
         android:textSize="24dp" />
 
     <Button
@@ -30,10 +30,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#4dae27"
+        android:background="@color/colorPrimary"
         android:clickable="true"
         android:stateListAnimator="@null"
-        android:text="Update"
+        android:text="@string/update"
         android:textAllCaps="false"
         android:textSize="20dp"
         android:theme="@style/FlatButton" />

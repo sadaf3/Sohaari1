@@ -43,6 +43,8 @@
 
         <activity android:name=".activity.AccessibilityNotEnabled" />
 
+        <activity android:name=".activity.Help" />
+
         <service
             android:name=".service.USSDAccessibilityService"
             android:enabled="true"

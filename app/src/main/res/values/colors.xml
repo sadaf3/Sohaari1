@@ -11,7 +11,8 @@
     <color name="light_blue">#2196f3</color>
     <color name="toolbar_color">#0288d1</color>
     <color name="divider">#e6e6e6</color>
-    <color name="drawable_back_light">#f4f4f4</color>
+    <color name="drawable_back_light">#efefef</color>
     <color name="drawable_back_medium">#e4e4e4</color>
+    <color name="drawable_back_dark">#c2c2c2</color>
     <color name="textColorBlack">#000000</color>
 </resources>

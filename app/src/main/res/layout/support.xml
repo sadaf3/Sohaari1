@@ -171,6 +171,10 @@
                 android:text="@string/step11"
                 android:textColor="@color/textColorBlack"
                 android:textSize="@dimen/default_text_size" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="36dp" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </RelativeLayout>

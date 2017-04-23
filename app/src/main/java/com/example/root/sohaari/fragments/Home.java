@@ -2,6 +2,7 @@ package com.example.root.sohaari.fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -28,8 +28,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import static com.example.root.sohaari.activity.Main2Activity.BALANCE;
-import static com.example.root.sohaari.activity.Main2Activity.myPref;
+import static com.example.root.sohaari.utils.Constants.BALANCE;
+import static com.example.root.sohaari.utils.Constants.myPref;
 import static com.example.root.sohaari.utils.MakeCall.makeCall;
 
 /**
@@ -41,8 +41,7 @@ public class Home extends Fragment {
     ImageView send, request, recharge;
     LinearLayout l1, l2, l3, l4;
     Button update_balance;
-    TextView main_balance;
-    EditText editText;
+    TextView main_balance, testCall, balance_header;
     SharedPreferences sharedPreferences;
 
     @Nullable
@@ -61,8 +60,11 @@ public class Home extends Fragment {
         l4 = (LinearLayout) view.findViewById(R.id.language);
         update_balance = (Button) view.findViewById(R.id.update_balance);
         main_balance = (TextView) view.findViewById(R.id.main_balance);
+        testCall = (TextView) view.findViewById(R.id.testCall);
+        balance_header = (TextView) view.findViewById(R.id.balance_header);
 
         checkUSSD = 0;
+
         sharedPreferences = this.getActivity().getSharedPreferences(myPref, 0);
         String balance = sharedPreferences.getString(BALANCE, "Balance");
 
@@ -85,7 +87,8 @@ public class Home extends Fragment {
         recharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "recharge", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "recharge : under progress", Toast.LENGTH_SHORT).show();
+                //makeCall("*99*4*5*1*3", getContext(), getActivity());
             }
         });
 
@@ -151,8 +154,10 @@ public class Home extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("eventbus4+Home", "on create called");
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);
+            Log.d("eventbus4+Home", "registered");
         }
     }
 
@@ -160,7 +165,9 @@ public class Home extends Fragment {
     public void onDestroy() {
         if (EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().unregister(this);
+            Log.d("eventbus4+Home", "deregistered");
         }
+        Log.d("eventbus4+Home", "ondestroy called");
         super.onDestroy();
     }
 
@@ -180,5 +187,6 @@ public class Home extends Fragment {
 
     private void setBalance(String balance) {
         main_balance.setText("₹ " + balance);
+        balance_header.setTextColor(Color.parseColor("#FFFFFF"));
     }
 }

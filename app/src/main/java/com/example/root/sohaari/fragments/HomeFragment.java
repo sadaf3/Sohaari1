@@ -18,8 +18,8 @@ import com.example.root.sohaari.activity.RequestMoney;
 import com.example.root.sohaari.activity.SendMoney;
 import com.example.root.sohaari.activity.Transactions;
 
-import static com.example.root.sohaari.activity.Main2Activity.BALANCE;
-import static com.example.root.sohaari.activity.Main2Activity.myPref;
+import static com.example.root.sohaari.utils.Constants.BALANCE;
+import static com.example.root.sohaari.utils.Constants.myPref;
 import static com.example.root.sohaari.utils.MakeCall.makeCall;
 
 /**

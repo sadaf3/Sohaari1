@@ -13,23 +13,23 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.root.sohaari.R;
 import com.example.root.sohaari.fragments.Home;
 import com.example.root.sohaari.fragments.SupportFragment;
-import com.example.root.sohaari.service.BackgroundService;
 import com.example.root.sohaari.service.USSDAccessibilityService;
 
 public class Main2Activity extends AppCompatActivity {
-    public static final String myPref = "com.app.sohaari";
-    public static final String BALANCE = "balance";
-    public static final String PENDING_REQUESTS = "pending requests";
-    public static final String TRANSACTIONS = "transactions";
-    public static String PACKAGE_NAME;
+    //    public static final String myPref = "com.app.sohaari";
+//    public static final String BALANCE = "balance";
+//    public static final String PENDING_REQUESTS = "pending requests";
+//    public static final String TRANSACTIONS = "transactions";
     public int currentFragment;
     String TAG = "main2activity";
     Fragment fr;
     Toolbar toolbar;
+    String PACKAGE_NAME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +43,26 @@ public class Main2Activity extends AppCompatActivity {
         //toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
+        PACKAGE_NAME = getApplicationContext().getPackageName();
+
+        if (!isAccessibilitySettingsOn(getApplicationContext())) {
+            {
+                Toast.makeText(this, "Accessibility service is off, turn it on", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, AccessibilityNotEnabled.class));
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        }
+
         fr = new Home();
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fr).commit();
         currentFragment = 1;
 
-        PACKAGE_NAME = getApplicationContext().getPackageName();
-        startService(new Intent(this, BackgroundService.class));
 
-        if (!isAccessibilitySettingsOn(getApplicationContext())) {
-            {
-                startActivity(new Intent(this, AccessibilityNotEnabled.class));
-            }
-        }
+//        if (!isAccessibilitySettingsOn(getApplicationContext())) {
+//            {
+//                startActivity(new Intent(this, AccessibilityNotEnabled.class));
+//            }
+//        }
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
@@ -106,8 +114,21 @@ public class Main2Activity extends AppCompatActivity {
         super.onStop();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //stopService(new Intent(this, BackgroundService.class));
+    }
+
     private boolean isAccessibilitySettingsOn(Context mContext) {
         int accessibilityEnabled = 0;
+        String TAG = "mainactivity";
         final String service = PACKAGE_NAME + "/" + USSDAccessibilityService.class.getCanonicalName();
         try {
             accessibilityEnabled = Settings.Secure.getInt(
@@ -143,15 +164,4 @@ public class Main2Activity extends AppCompatActivity {
         return false;
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        stopService(new Intent(this, BackgroundService.class));
-    }
 }

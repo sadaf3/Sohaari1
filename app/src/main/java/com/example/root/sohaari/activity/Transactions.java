@@ -17,9 +17,9 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import static com.example.root.sohaari.activity.Main2Activity.TRANSACTIONS;
-import static com.example.root.sohaari.activity.Main2Activity.myPref;
 import static com.example.root.sohaari.fragments.Home.checkUSSD;
+import static com.example.root.sohaari.utils.Constants.TRANSACTIONS;
+import static com.example.root.sohaari.utils.Constants.myPref;
 import static com.example.root.sohaari.utils.MakeCall.makeCall;
 
 public class Transactions extends AppCompatActivity {

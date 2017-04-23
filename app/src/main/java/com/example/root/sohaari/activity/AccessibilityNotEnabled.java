@@ -23,6 +23,7 @@ public class AccessibilityNotEnabled extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.enable_accessibility_service);
 
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         Log.d("tag", "Accessibility Not Enabled called");
 
         go_to_setting = (Button) findViewById(R.id.go_to_setting);

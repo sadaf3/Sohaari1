@@ -4,18 +4,76 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/user_details"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/drawable_back_dark" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@color/drawable_back_medium">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/bank_name"
+            android:textSize="@dimen/default_text_size" />
+
+        <TextView
+            android:id="@+id/paymentAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium"
+            android:text="Payment Address : "
+            android:textSize="@dimen/default_text_size" />
+
+        <TextView
+            android:id="@+id/accountNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/account_number"
+            android:textSize="@dimen/default_text_size" />
+
+        <TextView
+            android:id="@+id/isUpiPinSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium"
+            android:text="UPI Pin : "
+            android:textSize="@dimen/default_text_size" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="My details"
-            android:textSize="28dp" />
+            android:text="@string/my_details"
+            android:textSize="28dp"
+            android:visibility="gone" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/drawable_back_dark" />
 
     <LinearLayout
         android:id="@+id/services"
@@ -28,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
-            android:text="Choose an option"
+            android:text="@string/choose_an_option"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:visibility="gone" />
@@ -58,11 +116,12 @@
                     android:src="@drawable/ic_phone" />
 
                 <TextView
+                    android:id="@+id/change_bank_account"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="@dimen/list_padding_medium"
-                    android:text="Change Bank Account"
+                    android:text="@string/change_bank_account"
                     android:textSize="@dimen/list_text_size_medium" />
             </LinearLayout>
 
@@ -91,11 +150,12 @@
                     android:tint="@color/colorPrimary" />
 
                 <TextView
+                    android:id="@+id/manage_beneficiary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="@dimen/list_padding_medium"
-                    android:text="Manage Beneficiary"
+                    android:text="@string/manage_beneficiary"
                     android:textSize="@dimen/list_text_size_medium" />
 
             </LinearLayout>
@@ -125,11 +185,12 @@
                     android:tint="@color/colorPrimary" />
 
                 <TextView
+                    android:id="@+id/become_merchant"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="@dimen/list_padding_medium"
-                    android:text="Become A Merchant"
+                    android:text="@string/become_a_merchant"
                     android:textSize="@dimen/list_text_size_medium" />
 
             </LinearLayout>
@@ -159,11 +220,12 @@
                     android:tint="@color/colorPrimary" />
 
                 <TextView
+                    android:id="@+id/de_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="@dimen/list_padding_medium"
-                    android:text="De Register"
+                    android:text="@string/de_register"
                     android:textSize="@dimen/list_text_size_medium" />
 
             </LinearLayout>

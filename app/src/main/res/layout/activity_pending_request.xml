@@ -22,7 +22,7 @@
         android:layout_marginBottom="60dp"
         android:gravity="center"
         android:padding="24dp"
-        android:text="No Pending Requests found"
+        android:text="@string/no_pending_requests_found"
         android:textSize="24dp" />
 
     <Button
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#4dae27"
+        android:background="@color/colorPrimary"
         android:clickable="true"
         android:stateListAnimator="@null"
         android:text="Update"

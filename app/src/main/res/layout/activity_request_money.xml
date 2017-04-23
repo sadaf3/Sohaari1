@@ -21,7 +21,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:paddingStart="8dp"
-        android:text="Mobile Number"
+        android:text="@string/mobile_number"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:visibility="gone" />
@@ -42,7 +42,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginBottom="4dp"
             android:layout_marginStart="2dp"
-            android:text="Request from" />
+            android:text="@string/request_from" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_call"
-                android:hint="Enter Mobile no"
+                android:hint="@string/enter_mobile_no"
                 android:inputType="number"
                 android:maxLength="12" />
         </LinearLayout>
@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_money"
-                android:hint="Enter amount (max ₹5000)"
+                android:hint="@string/enter_amount_max_5000"
                 android:inputType="number"
                 android:maxLength="4" />
         </LinearLayout>
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="12dp"
-        android:text="Enter your UPI PIN in the next screen to complete the transaction" />
+        android:text="@string/upi_pin_warning_message" />
 
     <Button
         android:id="@+id/send_continue"
@@ -115,7 +115,7 @@
         android:paddingStart="40dp"
         android:paddingTop="18dp"
         android:stateListAnimator="@null"
-        android:text="continue"
+        android:text="@string/button_continue"
         android:textSize="16sp"
         android:theme="@style/FlatButton" />
 
