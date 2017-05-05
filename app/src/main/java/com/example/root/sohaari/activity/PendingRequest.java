@@ -47,7 +47,19 @@ public class PendingRequest extends AppCompatActivity {
         pending_requests_balance = (TextView) findViewById(R.id.pending_requests_balance);
 
         sharedPreferences = getSharedPreferences(myPref, 0);
-        String pendingRequestsBalance = sharedPreferences.getString(PENDING_REQUESTS, PENDING_REQUESTS);
+        String pendingRequestsBalance = sharedPreferences.getString(PENDING_REQUESTS, PENDING_REQUESTS)
+                .trim()
+                .replace("[", "")
+                .replace("Next", "")
+                .replace("NEXT", "")
+                .replace("CANCEL", "")
+                .replace("SEND", "")
+                .replace("]", "")
+                .replace("- ", "")
+                .replace(" , ", "")
+                .replace(" ,", "")
+                .replace("\n,", "");
+        ;
         if (!pendingRequestsBalance.toLowerCase().equals(PENDING_REQUESTS))
             setPendingRequestsBalance(pendingRequestsBalance);
 
@@ -70,6 +82,18 @@ public class PendingRequest extends AppCompatActivity {
     public void onEvent(BalanceEventBus event) {
         if (checkUSSD != 3) return;
         String pendingRequestssBalance = event.balance;
+        pendingRequestssBalance = pendingRequestssBalance
+                .trim()
+                .replace("[", "")
+                .replace("Next", "")
+                .replace("NEXT", "")
+                .replace("CANCEL", "")
+                .replace("SEND", "")
+                .replace("]", "")
+                .replace("- ", "")
+                .replace(" , ", "")
+                .replace(" ,", "")
+                .replace("\n,", "");
         Log.d("eventbus+Transactions ", pendingRequestssBalance);
 
         setPendingRequestsBalance(pendingRequestssBalance);

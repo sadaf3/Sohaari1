@@ -72,4 +72,5 @@
     <string name="enter_receiver_s_mobile_no">Enter receiver\'s Mobile no</string>
     <string name="enter_receiver_s_payment_address">Enter receiver\'s Payment address</string>
     <string name="upi_pin_warning">Your UPI Pin will be used in all future transaction. So don\'t share this pin to anyone and try changing your Pin at least once in a month.</string>
+    <string name="recharge_instructions">1. Save our payment address as a beneficiary and name it \'Recharge\' or whatever you like. \n2. Send recharge amount to the mentioned beneficiary by entering your UPI PIN. \n3. Within 10 minutes, give a missed call to us(we will not pick your phone unless you want to talk to no one). \n\nFollow these simple steps and we will do your recharge within no time. In case of failure, we will refund your money within 24 hours.</string>
 </resources>

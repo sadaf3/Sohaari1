@@ -4,14 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.root.sohaari.R;
 
 import static com.example.root.sohaari.utils.MakeCall.makeCall;
 
 public class UpiPin extends AppCompatActivity {
-    Button set_upi_pin, change_upi_pin;
+    LinearLayout set_upi_pin, change_upi_pin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,9 @@ public class UpiPin extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
         setUpToolbar();
+
+        set_upi_pin = (LinearLayout) findViewById(R.id.set_upi_pin);
+        change_upi_pin = (LinearLayout) findViewById(R.id.change_upi_pin);
 
         set_upi_pin.setOnClickListener(new View.OnClickListener() {
             @Override

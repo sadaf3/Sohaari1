@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.root.sohaari.R;
 import com.example.root.sohaari.activity.PendingRequest;
+import com.example.root.sohaari.activity.Recharge;
 import com.example.root.sohaari.activity.RequestMoney;
 import com.example.root.sohaari.activity.SendMoney;
 import com.example.root.sohaari.activity.Transactions;
@@ -87,8 +88,8 @@ public class Home extends Fragment {
         recharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "recharge : under progress", Toast.LENGTH_SHORT).show();
-                //makeCall("*99*4*5*1*3", getContext(), getActivity());
+                //Toast.makeText(getContext(), "recharge : under progress", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), Recharge.class));
             }
         });
 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:title="Digi Recharge"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="How to recharge?"
+                android:textSize="20dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c7c7c7" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="@string/recharge_instructions"
+                android:textSize="20dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/save_our_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="20dp"
+                android:stateListAnimator="@null"
+                android:text="Save our payment address"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="our payment address for recharge : digirecharge@ybl" />
+
+            <Button
+                android:id="@+id/send_recharge_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="20dp"
+                android:stateListAnimator="@null"
+                android:text="Send Recharge Amount"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="After successful transaction, give a missed call on 8210671730" />
+
+            <Button
+                android:id="@+id/missed_call"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="20dp"
+                android:stateListAnimator="@null"
+                android:text="Give a missed call"
+                android:textColor="@color/colorWhite" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

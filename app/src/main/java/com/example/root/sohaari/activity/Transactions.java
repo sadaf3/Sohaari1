@@ -47,7 +47,18 @@ public class Transactions extends AppCompatActivity {
         update_transactions = (Button) findViewById(R.id.update_transactions);
 
         sharedPreferences = getSharedPreferences(myPref, 0);
-        String transactionBalance = sharedPreferences.getString(TRANSACTIONS, TRANSACTIONS);
+        String transactionBalance = sharedPreferences.getString(TRANSACTIONS, TRANSACTIONS)
+                .trim()
+                .replace("[", "")
+                .replace("Next", "")
+                .replace("NEXT", "")
+                .replace("CANCEL", "")
+                .replace("SEND", "")
+                .replace("]", "")
+                .replace("- ", "")
+                .replace(" , ", "")
+                .replace(" ,", "")
+                .replace("\n,", "");
 
         if (!transactionBalance.toLowerCase().equals(TRANSACTIONS))
             setTranscationBalance(transactionBalance);
@@ -73,6 +84,18 @@ public class Transactions extends AppCompatActivity {
         String transactionBalance = event.balance;
         Log.d("eventbus+Transactions ", transactionBalance);
 
+        transactionBalance = transactionBalance
+                .trim()
+                .replace("[", "")
+                .replace("Next", "")
+                .replace("NEXT", "")
+                .replace("CANCEL", "")
+                .replace("SEND", "")
+                .replace("]", "")
+                .replace("- ", "")
+                .replace(" , ", "")
+                .replace(" ,", "")
+                .replace("\n,", "");
         setTranscationBalance(transactionBalance);
 
         sharedPreferences = getSharedPreferences(myPref, 0);
